@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Check ngrok version",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/c",
+				"cd /d \"c:\\Users\\Tushar kosish\\OneDrive\\Desktop\\agent\\agent\" && where ngrok && .\\ngrok\\ngrok.exe version"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

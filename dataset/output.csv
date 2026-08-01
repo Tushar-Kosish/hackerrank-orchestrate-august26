@@ -1,0 +1,9 @@
+message_id,action,message_type,reason,confidence,evidence_message_ids
+m1,digest,greeting,short greeting,0.3,none
+m2,notify,urgent,contains urgent keywords,0.9,none
+m3,notify,payment,payment-related content,0.85,none
+m4,digest,promotion,image poster (looks promotional),0.5,none
+m5,mute,forward,highly-forwarded message,0.6,none
+m6,digest,personal,voice note (batched),0.4,none
+m7,digest,greeting,short greeting,0.3,none
+m8,digest,promotion,promotion or poster,0.45,none

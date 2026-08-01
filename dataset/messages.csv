@@ -1,0 +1,9 @@
+message_id,user_id,conversation_type,group_id,business_id,sender_user_id,created_at,message_text,media_type,media_id,forwarded_count
+m1,u1,personal,, ,s1,2026-08-01T08:00:00Z,"Hey, are we still on for lunch?",, ,0
+m2,u1,personal,, ,s2,2026-08-01T08:05:00Z,"URGENT: Please call me back asap about the meeting.",, ,0
+m3,u2,business,,b1, ,2026-08-01T09:00:00Z,"Your invoice #12345 is due tomorrow.",, ,0
+m4,u3,group,g1, ,s3,2026-08-01T10:00:00Z,"Great sale! 50% OFF - shop now!",image,img1,1
+m5,u4,personal,, ,s4,2026-08-01T11:00:00Z,"Forwarded many times",, ,5
+m6,u1,personal,, ,s5,2026-08-01T12:00:00Z,"",voice,voice1,0
+m7,u1,group,g2, ,s6,2026-08-01T12:30:00Z,"hi",, ,0
+m8,u5,business,,b2, ,2026-08-01T13:00:00Z,"Exclusive offer just for you!",image,img2,0
