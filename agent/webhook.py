@@ -1,16 +1,16 @@
-"""Flask webhook receiver for WhatsApp (Twilio) sandbox testing.
+"""Flask webhook receiver and Web Dashboard for WhatsApp Message Notification Router.
 
-Receives incoming message POSTs, maps to the agent schema, calls
-`run_agent.process_message_dict`, and returns JSON with the routing decision.
-
-For local testing use `ngrok` to expose the Flask port and configure Twilio sandbox
-to forward messages to the public URL.
+Provides:
+- Web UI dashboard at `/` for interactive testing and dataset exploration.
+- `/api/dataset` endpoint for fetching dataset message predictions and stats.
+- `/api/route` POST endpoint for real-time routing evaluation.
+- `/webhook` POST receiver returning TwiML XML for instant WhatsApp replies.
 """
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, send_from_directory, Response
 import os
 import sys
-import threading
 import logging
+import csv
 from pathlib import Path
 
 # Ensure the repository root is on sys.path when running this file directly.
@@ -18,23 +18,20 @@ repo_root = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(repo_root))
 
 from agent import run_agent
-try:
-    from twilio.rest import Client as TwilioClient
-except Exception:
-    TwilioClient = None
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates", static_folder="static")
 logging.basicConfig(level=logging.INFO)
+
+# In-memory live message log for WhatsApp incoming traffic
+live_incoming_messages = []
 
 
 def twilio_payload_to_row(form):
-    # Twilio sends fields like From, Body, NumMedia, MediaContentType0, etc.
-    message_id = form.get("MessageSid") or form.get("SmsSid") or ""
+    message_id = form.get("MessageSid") or form.get("SmsSid") or f"msg_{len(live_incoming_messages)+1}"
     user_id = form.get("To") or "unknown_user"
     text = form.get("Body", "")
     media_type = ""
     media_id = ""
-    # Simple mapping for first media
     if int(form.get("NumMedia", "0")) > 0:
         content_type = form.get("MediaContentType0", "")
         if content_type.startswith("image"):
@@ -49,7 +46,7 @@ def twilio_payload_to_row(form):
         "conversation_type": "personal",
         "group_id": "",
         "business_id": "",
-        "sender_user_id": form.get("From"),
+        "sender_user_id": form.get("From") or "WhatsApp User",
         "created_at": "",
         "message_text": text,
         "media_type": media_type,
@@ -59,40 +56,81 @@ def twilio_payload_to_row(form):
     return row
 
 
-def process_and_maybe_reply(row, to_number=None):
-    try:
-        result = run_agent.process_message_dict(row)
-        logging.info("Processed message %s -> %s", row.get("message_id"), result.get("action"))
-        # If Twilio creds available, send reply asynchronously
-        sid = os.environ.get("TWILIO_ACCOUNT_SID")
-        token = os.environ.get("TWILIO_AUTH_TOKEN")
-        from_number = os.environ.get("TWILIO_FROM_NUMBER")
-        if sid and token and from_number and TwilioClient is not None and to_number:
-            client = TwilioClient(sid, token)
-            body = f"Action: {result['action']}; Type: {result['message_type']}; Reason: {result['reason']}"
-            try:
-                client.messages.create(body=body, from_=from_number, to=to_number)
-                logging.info("Sent reply to %s", to_number)
-            except Exception as e:
-                logging.exception("Failed to send Twilio reply: %s", e)
-        return result
-    except Exception:
-        logging.exception("Error processing message")
-        return None
+@app.route("/")
+def index():
+    return render_template("index.html")
 
 
-@app.route("/webhook", methods=["POST"])
+@app.route("/api/dataset", methods=["GET"])
+def get_dataset():
+    dataset_dir = repo_root / "dataset"
+    messages_file = dataset_dir / "messages.csv"
+    if not messages_file.exists():
+        messages_file = dataset_dir / "sample_messages.csv"
+
+    messages = []
+    stats = {"total": 0, "notify": 0, "digest": 0, "mute": 0}
+
+    # First add live WhatsApp messages
+    for item in live_incoming_messages:
+        messages.append(item)
+        act = (item.get("action") or "digest").lower()
+        stats["total"] += 1
+        if act in stats:
+            stats[act] += 1
+
+    # Then append CSV dataset
+    if messages_file.exists():
+        with open(messages_file, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                res = run_agent.process_message_dict(row)
+                combined = {**row, **res}
+                messages.append(combined)
+                act = (res.get("action") or "digest").lower()
+                stats["total"] += 1
+                if act in stats:
+                    stats[act] += 1
+
+    return jsonify({"messages": messages, "stats": stats})
+
+
+@app.route("/api/route", methods=["POST"])
+def route_api():
+    data = request.get_json(force=True, silent=True) or request.form.to_dict() or {}
+    result = run_agent.process_message_dict(data)
+    return jsonify(result)
+
+
+@app.route("/webhook", methods=["GET", "POST"])
 def webhook():
-    form = request.form or {}
+    form = request.form or request.args or {}
     row = twilio_payload_to_row(form)
-    to_number = form.get("From")
-    # Spawn background thread to process the message so the webhook responds quickly
-    thread = threading.Thread(target=process_and_maybe_reply, args=(row, to_number), daemon=True)
-    thread.start()
-    # Immediate acknowledgement to the sender system
-    return jsonify({"status": "accepted", "message_id": row.get("message_id")})
+    result = run_agent.process_message_dict(row)
+
+    # Track in live list
+    combined = {**row, **result}
+    live_incoming_messages.insert(0, combined)
+
+    action = (result.get("action") or "digest").upper()
+    chat_reply = result.get("chat_reply") or "Thanks for reaching out!"
+
+    xml_response = f"""<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Message>{chat_reply}</Message>
+</Response>"""
+
+    logging.info("WhatsApp Webhook triggered: %s -> %s", row.get("message_text"), action)
+    return Response(xml_response, mimetype="text/xml")
+
+
+@app.route("/media/<path:filename>")
+def serve_media(filename):
+    media_dir = repo_root / "dataset" / "media"
+    return send_from_directory(media_dir, filename)
 
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    print(f"Starting Notification Router Web Dashboard on http://localhost:{port}")
+    app.run(host="0.0.0.0", port=port, debug=False)

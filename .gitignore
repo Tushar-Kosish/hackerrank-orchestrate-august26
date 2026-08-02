@@ -1,0 +1,12 @@
+.env
+*.env
+agent/.env
+__pycache__/
+*.pyc
+*.zip
+agent/ngrok/
+agent/whatsapp_session/
+.venv/
+log.txt
+hackerrank_log.txt
+

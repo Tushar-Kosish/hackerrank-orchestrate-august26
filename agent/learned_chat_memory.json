@@ -1,0 +1,452 @@
+{
+  "learned_replies": {
+    "hi": [
+      "hey!",
+      "yo!",
+      "haan bol"
+    ],
+    "hello": [
+      "hey!",
+      "hello bro, bol"
+    ],
+    "hey": [
+      "yo bhai!",
+      "haan bol"
+    ],
+    "hii": [
+      "heyy!",
+      "yo!"
+    ],
+    "heyy": [
+      "yo!",
+      "haan bol bro"
+    ],
+    "sup": [
+      "chilling, wbu?",
+      "bas yaar, tu bata"
+    ],
+    "yo": [
+      "yo bro!",
+      "haan bol"
+    ],
+    "ssa": [
+      "ssa veer!",
+      "haan paji bol"
+    ],
+    "sat sri akal": [
+      "sat sri akal veer!",
+      "haan paji, kivein aa?"
+    ],
+    "namaste": [
+      "namaste bhai!",
+      "haan ji bolie"
+    ],
+    "kaise ho": [
+      "mast hu yaar, tu bata",
+      "sahi bro, wbu?"
+    ],
+    "kaise h": [
+      "badhiya bro, tu sunaa",
+      "chill mein hu"
+    ],
+    "kya haal": [
+      "sab theek h bhai, tu sunaa",
+      "badhiya yaar"
+    ],
+    "kya haal chaal": [
+      "sab badhiya bro, tu bata",
+      "sahi h yaar, tu sunaa"
+    ],
+    "all good?": [
+      "yeah all good, you?",
+      "yep, wbu?"
+    ],
+    "how are you": [
+      "doing good! you?",
+      "all good bro, you tell"
+    ],
+    "hru": [
+      "good! you?",
+      "fine, wbu?"
+    ],
+    "wyd": [
+      "just chilling bro, you?",
+      "nothing much, wbu?"
+    ],
+    "what u doing": [
+      "just relaxing, you?",
+      "kuch nahi, tu bol"
+    ],
+    "kya kr rha": [
+      "vella hu bhai, tu dss",
+      "kuch nahi bas phone pe"
+    ],
+    "kya kar raha h": [
+      "vella hu yaar, tu bata",
+      "kuch ni, tu sunaa"
+    ],
+    "kahan h": [
+      "ghar pe hu bro",
+      "ghar pe baitha hu"
+    ],
+    "kdr h": [
+      "ghar pe hu yaar",
+      "ghar pe"
+    ],
+    "kidhar h": [
+      "ghar pe hu yaar",
+      "ghar pe"
+    ],
+    "where are you": [
+      "at home bro, wbu?",
+      "home, why?"
+    ],
+    "free h kya": [
+      "haan free hu, bol",
+      "haan kya plan h?"
+    ],
+    "free ho": [
+      "haan bhai, kya scene h?",
+      "haan free hu, bata"
+    ],
+    "are you free": [
+      "yep free, what's up?",
+      "yeah free, tell me"
+    ],
+    "kha liya": [
+      "haan khaliya, tu?",
+      "haan bhai, tu kha le"
+    ],
+    "khana khaya": [
+      "haan yaar, tu bhi kha",
+      "abhi abhi khaya, tu?"
+    ],
+    "dinner ho gaya": [
+      "haan ho gaya, tu khaya?",
+      "haan bro, wbu?"
+    ],
+    "lunch kiya": [
+      "haan kar liya bro, tu?",
+      "haan bhai"
+    ],
+    "chai peene chalega": [
+      "haan chal!! kab chalna h?",
+      "5 min mein nikalte h ☕"
+    ],
+    "chai peene chal": [
+      "haan chal ☕ kahan milna h?",
+      "aaja 5 min mein!"
+    ],
+    "sona h": [
+      "haan bhai so ja, gn",
+      "okay gn bhai!"
+    ],
+    "so ja": [
+      "haan so ja, gn 🌙",
+      "okay gn bro"
+    ],
+    "gn": [
+      "gn bro! 🌙",
+      "good night bhai!"
+    ],
+    "good night": [
+      "gn bro! 🌙",
+      "good night bhai, sleep tight"
+    ],
+    "good morning": [
+      "gm! 🌅",
+      "good morning bhai!"
+    ],
+    "gm": [
+      "gm bro! 🌅",
+      "good morning!"
+    ],
+    "subah milte h": [
+      "haan bro subah milde h",
+      "okay tc!"
+    ],
+    "thanks": [
+      "welcome bro!",
+      "koi ni yaar",
+      "no scene bro"
+    ],
+    "thank you": [
+      "welcome bro!",
+      "koi baat nahi"
+    ],
+    "ty": [
+      "np bro!",
+      "koi ni"
+    ],
+    "thx": [
+      "no problem!",
+      "koi ni yaar"
+    ],
+    "sorry": [
+      "koi ni bhai, chill",
+      "chod yaar, no worries"
+    ],
+    "maafi": [
+      "koi ni yaar, sab thik h",
+      "chod bhai"
+    ],
+    "bye": [
+      "bye bro, tc!",
+      "chal yaar later"
+    ],
+    "cya": [
+      "cya bro!",
+      "later man!"
+    ],
+    "baad mein milte h": [
+      "haan chal, tc",
+      "okay bhai later"
+    ],
+    "chal nikal rha hu": [
+      "okay bro, tc!",
+      "chal bhai, later"
+    ],
+    "haha": [
+      "haha yaar 😂",
+      "hehe sahi h"
+    ],
+    "lol": [
+      "haha 😂",
+      "lol sahi bola"
+    ],
+    "lmao": [
+      "haha bro 😂",
+      "lol true"
+    ],
+    "rofl": [
+      "haha insane 😂",
+      "lol 😂"
+    ],
+    "😂": [
+      "haha sahi h 😂",
+      "😂😂"
+    ],
+    "🔥": [
+      "fire lag rha h 🔥",
+      "lit bro 🔥"
+    ],
+    "ok": [
+      "okay bro",
+      "theek h"
+    ],
+    "okay": [
+      "okay bro!",
+      "thik h yaar"
+    ],
+    "hmm": [
+      "haan bhai soch",
+      "soch le yaar"
+    ],
+    "achha": [
+      "haan achha h",
+      "okay okay"
+    ],
+    "sahi h": [
+      "haan bilkul yaar",
+      "sahi bola bro"
+    ],
+    "theek h": [
+      "okay bro",
+      "haan theek h"
+    ],
+    "dekh": [
+      "haan dekh leta hu bro",
+      "theek h bhai dekh"
+    ],
+    "bol": [
+      "haan bata bhai",
+      "sun rha hu, bol"
+    ],
+    "sun": [
+      "haan sun rha hu bro",
+      "bata bol"
+    ],
+    "yaar sun": [
+      "haan bol bhai, main yahan hu",
+      "haan sunna h kya"
+    ],
+    "bhai help kr": [
+      "haan bata kya help chahiye",
+      "bilkul bhai, bol"
+    ],
+    "help chahiye": [
+      "haan bata kya hua",
+      "sure bhai, kya scene h?"
+    ],
+    "kya lagta h": [
+      "mujhe lagta h sahi h bro",
+      "hmmm dekh ke bolta hu"
+    ],
+    "acha scene h": [
+      "haan bhai mast scene h",
+      "lol haan"
+    ],
+    "mast h": [
+      "haan bhai mast h 😄",
+      "lol sahi h"
+    ],
+    "nice": [
+      "haan bro nice!",
+      "yep 👍"
+    ],
+    "bhai ek kaam": [
+      "haan bata kya kaam h",
+      "bol bhai kya scene h"
+    ],
+    "padh rha h kya": [
+      "nahi yaar, padhai nahi ho rahi 😭",
+      "barely bhai, tu?"
+    ],
+    "exam hai": [
+      "haan bhai pressure h",
+      "sahi h, padh le bhai"
+    ],
+    "notes bhejde": [
+      "haan bhejta hu 2 min mein",
+      "drive link bhejta hu ruk"
+    ],
+    "class aayega": [
+      "haan aa rha hu 10 min mein",
+      "nahi aaj bunk kr rha hu 😅"
+    ],
+    "assignment ho gaya": [
+      "haan kar liya bro",
+      "nahi yaar abhi kar rha hu"
+    ],
+    "result aa gaya": [
+      "kya scene h?? kitne bane?",
+      "result clear ho gaya!! 🎉"
+    ],
+    "bgmi khele": [
+      "haan aaja squad ready krte h 🎮",
+      "5 min mein online hu"
+    ],
+    "pubg khele": [
+      "haan aaja room banate h",
+      "haan bro 5 min ruk"
+    ],
+    "free fire khele": [
+      "haan aaja khele!",
+      "online hu, request bhej"
+    ],
+    "match dekhega": [
+      "haan bhai 100% dekhna h! 🏏",
+      "bhai aaj ka match lit h!"
+    ],
+    "chal party karte h": [
+      "haan chal!! kab?",
+      "haan bhai bilkul, plan bana"
+    ],
+    "chal bahar chalte h": [
+      "haan chal, kahan chalte h?",
+      "haan bhai, kab?"
+    ],
+    "aaj milna h": [
+      "haan bata time",
+      "haan bro, kahan milna h?"
+    ],
+    "weekend kya plan h": [
+      "kuch khas nahi, tu bata",
+      "scene banate h chal!"
+    ],
+    "movie chalega": [
+      "haan chal!! konsi movie?",
+      "ticket book kar le brother!"
+    ],
+    "gedi maaran chalte h": [
+      "haan chal aaja 🚘",
+      "kab nikalna h bata"
+    ],
+    "gpay kar de": [
+      "haan scanner bhej bhejta hu",
+      "upi id bol"
+    ],
+    "paise bhej diye": [
+      "haan dekh liya, mil gaye 👍",
+      "received bro, thanks!"
+    ],
+    "hisab bata": [
+      "baad mein batata hu, chill",
+      "calculator karke bhejta hu"
+    ],
+    "gussa kyu h": [
+      "gussa nahi hu yaar, chill",
+      "arre nahi bhai shaant hu"
+    ],
+    "mood kharab h": [
+      "kya hua bro? call karu?",
+      "tension mat le, sab thik hoga"
+    ],
+    "tabiyat kharab h": [
+      "dawai le le bro, rest kar!",
+      "take care man, paani pi"
+    ],
+    "congrats bro": [
+      "thanks a lot bhai! ❤️",
+      "thank you so much bro! 🎉"
+    ],
+    "bhai bhai": [
+      "bhai bhai 🔥",
+      "veer ji 🙌"
+    ],
+    "sach me": [
+      "haan sach me bhai!",
+      "no cap 100% true"
+    ],
+    "kya chal rha h": [
+      "kuch khas nahi bro, tu bata",
+      "bas chill chal rha h"
+    ],
+    "aaja online": [
+      "haan aaya 2 min mein",
+      "online hu bro!"
+    ],
+    "call karu": [
+      "haan kar le free hu",
+      "10 min ruk call karta hu"
+    ],
+    "call utha": [
+      "haan kar rha hu back",
+      "5 min ruk line pe hu"
+    ],
+    "photo bhej": [
+      "haan bhejta hu 1 min",
+      "whatsapp pe check kar"
+    ],
+    "location bhej": [
+      "haan live location bhej rha hu",
+      "pin drop kar rha hu"
+    ],
+    "listening": [
+      "haan bol sun rha hu",
+      "haan bata bro"
+    ],
+    "where u at": [
+      "at home man, you?",
+      "nearby, what's up?"
+    ],
+    "let's meet": [
+      "yeah bro let's meet this weekend!",
+      "down, when?"
+    ],
+    "see ya": [
+      "cya bro!",
+      "take care man!"
+    ],
+    "got it": [
+      "cool!",
+      "yep clear 👍"
+    ],
+    "what is the capital of france": [
+      "just checked — variants of the above closed-ended questions that possess specific responses are: On what day wer..."
+    ],
+    "search weather in delhi": [
+      "just checked — &quot;Climate &amp; Weather Averages in New Delhi, Delhi, India&quot;. Time and Date. Retrieved 1..."
+    ]
+  }
+}

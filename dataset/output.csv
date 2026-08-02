@@ -1,9 +1,9 @@
 message_id,action,message_type,reason,confidence,evidence_message_ids
-m1,digest,greeting,short greeting,0.3,none
-m2,notify,urgent,contains urgent keywords,0.9,none
-m3,notify,payment,payment-related content,0.85,none
-m4,digest,promotion,image poster (looks promotional),0.5,none
-m5,mute,forward,highly-forwarded message,0.6,none
-m6,digest,personal,voice note (batched),0.4,none
-m7,digest,greeting,short greeting,0.3,none
-m8,digest,promotion,promotion or poster,0.45,none
+m1,digest,personal,Personal chat message for later review,0.75,none
+m2,notify,urgent,High-priority urgent message needing immediate attention,0.95,none
+m3,notify,payment,Payment/billing notification from verified business (TrustedCo),0.92,none
+m4,mute,promotion,Promotional content with forwarding or image — likely spam,0.9,none
+m5,mute,spam,Heavily forwarded message (forwarded 5x) — likely chain/spam,0.88,none
+m6,digest,personal,Voice note message (batched for later listening),0.65,none
+m7,digest,greeting,Short greeting message — low priority,0.55,none
+m8,mute,promotion,Promotional content from unverified business (PromoCorp),0.92,none
